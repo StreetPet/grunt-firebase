@@ -2,3 +2,4 @@
 npm-debug.log
 tmp
 config/auth.json
+localtests/
