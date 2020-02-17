@@ -10,12 +10,12 @@
 
 module.exports = function(grunt) {
 
-  var authConfig = grunt.file.readJSON('./config/auth.json');
+  var credential = grunt.file.readJSON('../config/street-pet-firebase-adminsdk-f9zf6-118e672276.json');
 
   // Project configuration.
   grunt.initConfig({
 
-    authConfig: authConfig,
+    credential: credential,
 
     jshint: {
       all: [
@@ -35,12 +35,12 @@ module.exports = function(grunt) {
     // Configuration to be run (and then tested).
     firebase: {
       options: {
-        // reference to start with (full firebase url)
-        reference: 'https://grunt-firebase.firebaseio.com/test',
-        // token is the secret key used for connecting to firebase from the server
-        // this is redacted from the public repo... add a file called ./config/auth.json
-        // with your token in it... { "token": "my token here" }
-        token: '<%= authConfig.token %>'
+        // database reference url, only root url
+        reference: 'https://grunt-firebase.firebaseio.com',
+        // Database path
+        path: '/test',
+        // credential from Firebase Admin SDK
+        credential: '<%= credential %>'
       },
       load: {
         options: {
