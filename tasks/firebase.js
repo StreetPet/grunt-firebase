@@ -82,7 +82,7 @@ module.exports = function (grunt) {
 
     var dest = options.dest || ('./');
     var filename = (options.reference.split('/')[options.reference.split('/').length - 1]);
-    var ext = path.extname(filename) || '.json';
+    var ext =  '.json';
     var output = path.join(dest, filename) + ext;
 
     // download to the destination
