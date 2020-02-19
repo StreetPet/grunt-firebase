@@ -3,3 +3,4 @@ npm-debug.log
 tmp
 config/*.json
 localtests/
+data/downloads
